@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+      body { 
+          font-family: 'Noto Sans Thai', sans-serif; 
+          scroll-behavior: smooth;
+      }
+      .dropdown:hover .dropdown-menu { 
+          display: block; 
+      }
+      /* Custom Animations */
+      @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+          animation: fadeIn 0.4s ease-out forwards;
+      }
+  </style>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen w-full bg-slate-50 flex flex-col justify-between text-gray-800">
+  
+  <!-- Header (Purple and Yellow Theme) -->
+  <header data-template-id="header-bg" class="canva-header bg-gradient-to-r from-purple-900 via-violet-800 to-purple-950 text-white shadow-md border-b-4 border-yellow-400">
+   <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+     <!-- Emblem/Icon in Yellow -->
+     <div class="bg-yellow-400/20 p-2.5 rounded-full border border-yellow-400/30">
+      <svg class="w-8 h-8 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+      </svg>
+     </div>
+     <div>
+      <h1 data-template-id="site-title" class="canva-text font-bold text-xl md:text-2xl tracking-wide text-yellow-300">เครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก</h1>
+      <p data-template-id="site-subtitle" class="canva-text text-purple-200 text-xs md:text-sm font-light">สำนักงานเขตพื้นที่การศึกษาประถมศึกษายโสธร เขต 1 </p>
+     </div>
+    </div>
+    <button id="mobile-toggle" class="md:hidden p-2 hover:bg-white/10 rounded-lg transition text-yellow-300" aria-label="Toggle Menu"> 
+     <i data-lucide="menu" class="w-6 h-6"></i> 
+    </button>
+   </div>
+  </header>
+
+  <!-- Navigation (Purple with Yellow Highlights) -->
+  <nav data-template-id="nav-bg" class="canva-menu bg-purple-950 text-white shadow-md sticky top-0 z-40">
+   <div id="nav-links" class="max-w-6xl mx-auto px-4 hidden md:flex flex-wrap gap-1 py-1.5 text-sm">
+    <a href="#hero-section" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="home" class="w-4 h-4 text-yellow-300"></i> หน้าแรก</a>
+    <a href="#schools" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="school" class="w-4 h-4 text-yellow-300"></i> โรงเรียนในสังกัด</a>
+    
+    <div class="dropdown relative">
+     <button class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1 font-medium"> 
+      <i data-lucide="trophy" class="w-4 h-4 text-yellow-300"></i> ศิลปหัตถกรรมนักเรียน <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i> 
+     </button>
+     <div class="dropdown-menu hidden absolute top-full left-0 bg-white text-gray-800 rounded-md shadow-xl border border-purple-100 z-50 min-w-[180px] overflow-hidden py-1">
+      <a href="#" onclick="openActivityModal('งานศิลปหัตถกรรมนักเรียน ปีการศึกษา 2567', 'ข้อมูลและสถิติการแข่งขันศิลปหัตถกรรมนักเรียน เครือข่ายม่วงบึงแก ประจำปี 2567 ได้เสร็จสิ้นอย่างสมบูรณ์ ขอแสดงความยินดีกับทุกโรงเรียนที่ได้รับรางวัลเป็นตัวแทนระดับเขตพื้นที่การศึกษา')" class="block px-4 py-2.5 hover:bg-purple-50 text-gray-700 transition">ปี 2567 (สรุปผล)</a> 
+      <!-- Integrated Arts & Crafts 2025 link -->
+      <a href="https://esan.compet.site/387989" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 hover:bg-purple-50 text-gray-700 transition flex items-center justify-between font-medium text-purple-900">
+       <span>ปี 2568 (กำลังดำเนินการ)</span>
+       <i data-lucide="external-link" class="w-3.5 h-3.5 text-purple-600"></i>
+      </a> 
+      <a href="#" onclick="openActivityModal('งานศิลปหัตถกรรมนักเรียน ปีการศึกษา 2569', 'แผนงานบูรณาการและแนวทางการจัดงานศิลปหัตถกรรมนักเรียนล่วงหน้า ประจำปีการศึกษา 2569 เพื่อเตรียมความพร้อมของสถานศึกษาในเครือข่าย')" class="block px-4 py-2.5 hover:bg-purple-50 text-gray-700 transition">ปี 2569 (แผนงาน)</a>
+     </div>
+    </div>
+
+    <a href="https://script.google.com/macros/s/AKfycbzRxdrfPPsLELeYOXtqDDl3trv3QyyL6vTUtYoArc2L3SK1dOgrSnJdS_BdH3Ij_i4PHw/exec" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium text-yellow-300 hover:text-white"><i data-lucide="book-open" class="w-4 h-4"></i> รักษ์ภาษาไทย</a> 
+    <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium text-orange-300 hover:text-white"><i data-lucide="dumbbell" class="w-4 h-4"></i> แข่งขันกีฬา</a> 
+    <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="file-text" class="w-4 h-4 text-purple-300"></i> ระบบคำสั่ง</a> 
+    <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="compass" class="w-4 h-4 text-purple-300"></i> ค่ายลูกเสือ</a> 
+    <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="users" class="w-4 h-4 text-purple-300"></i> ประชุมเครือข่าย</a> 
+    <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="trending-up" class="w-4 h-4 text-purple-300"></i> ยกระดับผลสัมฤทธิ์</a>
+   </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-grow">
+   <!-- Hero Banner with Custom User Image -->
+   <section id="hero-section" class="relative rounded-2xl overflow-hidden mb-12 shadow-xl border border-gray-100 bg-purple-950">
+    <img data-template-id="hero-img" class="canva-image w-full h-64 md:h-96 object-cover opacity-80 hover:scale-105 transition duration-700" src="https://scontent.fnak1-1.fna.fbcdn.net/v/t39.30808-6/645447767_1274433854669864_4807986490155264290_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1280x960&amp;ctp=s1280x960&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=833d8c&amp;_nc_ohc=k3k9B8WTBh4Q7kNvwF93LAv&amp;_nc_oc=Adqp_kBJUlKiDPpcIRPLdlOZoFwfkAbkMAGS7b_ZKxLSRRm4kSOnZsy1Bqf6_NbM4SM&amp;_nc_zt=23&amp;_nc_ht=scontent.fnak1-1.fna&amp;_nc_gid=8QvX9l9HZZdVVaqvi1fLrw&amp;_nc_ss=7b289&amp;oh=00_Af-YW6w70Uky5XsopydespQcrQHwlRbCSMDCfzC7ne0phQ&amp;oe=6A3BEED3" alt="เครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&amp;fit=crop&amp;q=80&amp;w=1200'">
+    <div class="absolute inset-0 bg-gradient-to-t from-purple-950 via-purple-900/40 to-transparent flex flex-col justify-end p-6 md:p-10">
+     <span class="bg-yellow-400 text-purple-950 px-3 py-1 rounded-full text-xs font-bold w-max mb-3 shadow">ข่าวสารประชาสัมพันธ์ล่าสุด</span>
+     <h2 data-template-id="hero-text" class="canva-text text-white font-bold text-2xl md:text-4xl leading-snug drop-shadow-md">
+      ร่วมขับเคลื่อนการศึกษา พัฒนาคุณภาพผู้เรียน สู่ศตวรรษที่ 21 อย่างยั่งยืน
+     </h2>
+     <p class="text-purple-100 text-sm md:text-base mt-2 max-w-2xl font-light">เครือข่ายการเรียนรู้ที่เข้มแข็งของโรงเรียนทั้ง 10 แห่ง เพื่อยกระดับความรู้ คู่คุณธรรม และส่งเสริมทักษะอาชีพของเยาวชนในพื้นที่ม่วงบึงแก</p>
+    </div>
+   </section>
+
+   <!-- Quick Information Stats (Purple Theme) -->
+   <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+    <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-50 text-center flex flex-col justify-center items-center">
+      <div class="p-3 bg-purple-100 text-purple-800 rounded-full mb-2">
+        <i data-lucide="school" class="w-6 h-6"></i>
+      </div>
+      <span class="text-2xl font-extrabold text-purple-900">10</span>
+      <span class="text-xs text-gray-500 mt-1">โรงเรียนในเครือข่าย</span>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-50 text-center flex flex-col justify-center items-center">
+      <div class="p-3 bg-yellow-100 text-yellow-850 rounded-full mb-2">
+        <i data-lucide="users" class="w-6 h-6"></i>
+      </div>
+      <span class="text-2xl font-extrabold text-purple-950">900+</span>
+      <span class="text-xs text-gray-500 mt-1">จำนวนนักเรียนทั้งหมด</span>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-50 text-center flex flex-col justify-center items-center">
+      <div class="p-3 bg-purple-100 text-purple-800 rounded-full mb-2">
+        <i data-lucide="award" class="w-6 h-6"></i>
+      </div>
+      <span class="text-2xl font-extrabold text-purple-900">88%</span>
+      <span class="text-xs text-gray-500 mt-1">ผลประเมินคุณภาพดีเยี่ยม</span>
+    </div>
+    <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-50 text-center flex flex-col justify-center items-center">
+      <div class="p-3 bg-yellow-100 text-yellow-850 rounded-full mb-2">
+        <i data-lucide="sparkles" class="w-6 h-6"></i>
+      </div>
+      <span class="text-2xl font-extrabold text-purple-950">12</span>
+      <span class="text-xs text-gray-500 mt-1">โครงการพัฒนาหลัก</span>
+    </div>
+   </section>
+
+   <!-- Schools Section (Toggleable Accordion style - Purple & Yellow) -->
+   <section id="schools" class="mb-12 scroll-mt-24">
+    <!-- Clickable Interactive Banner/Button -->
+    <button id="toggle-schools-btn" class="w-full flex items-center justify-between p-5 bg-gradient-to-r from-purple-50 to-indigo-50/50 hover:from-purple-100 hover:to-indigo-100/50 rounded-2xl border border-purple-100 transition duration-300 group focus:outline-none focus:ring-2 focus:ring-purple-500/50 shadow-sm" aria-expanded="false" aria-controls="schools-grid-container">
+     <div class="flex items-center gap-4 text-left">
+      <div class="p-3.5 bg-purple-850 text-white rounded-xl shadow-md group-hover:scale-105 transition duration-300 border border-yellow-400">
+       <i data-lucide="school" class="w-6 h-6 text-yellow-300"></i>
+      </div>
+      <div>
+       <h2 data-template-id="schools-heading" class="canva-text font-bold text-lg md:text-2xl text-purple-950 flex items-center gap-2">
+        โรงเรียนในสังกัดเครือข่ายม่วงบึงแก <span class="bg-yellow-400 text-purple-950 text-xs px-2.5 py-0.5 rounded-full font-bold">10 โรงเรียน</span>
+       </h2>
+       <p class="text-purple-700 text-xs md:text-sm mt-0.5 font-medium flex items-center gap-1">
+        <i data-lucide="help-circle" class="w-4 h-4"></i> คลิกที่นี่เพื่อเปิดหรือซ่อนรายชื่อสถานศึกษาทั้งหมดในเครือข่าย
+       </p>
+      </div>
+     </div>
+     <div class="p-2.5 bg-purple-200/50 text-purple-850 rounded-full group-hover:bg-purple-200 transition duration-300">
+      <i id="schools-toggle-icon" data-lucide="chevron-down" class="w-6 h-6 transition-transform duration-300"></i>
+     </div>
+    </button>
+    
+    <!-- Collapsible Container -->
+    <div id="schools-grid-container" class="hidden mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-in">
+     
+     <!-- School 1: โรงเรียนบ้านม่วงอาจโพธิ์ศรี(คุรุราษฎร์วิชาคม) - ศูนย์พัฒนาเครือข่าย -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านม่วงอาจโพธิ์ศรี(คุรุราษฎร์วิชาคม)', 'นายอุทัย ทองลุม', '154 คน', '12 คน', 'ตำบลม่วง อำเภอมหาชนะชัย จังหวัดยโสธร', 'https://www.map-school.com/')" data-template-id="school-1" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-650 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-purple-100 text-purple-850 rounded">ศูนย์พัฒนาเครือข่าย / แกนหลัก</span>
+       <div class="flex items-center gap-1.5">
+        <span class="text-[10px] text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded font-medium border border-purple-100 flex items-center gap-0.5">
+         <i data-lucide="globe" class="w-2.5 h-2.5"></i> มีเว็บไซต์
+        </span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+       </div>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg leading-tight">โรงเรียนบ้านม่วงอาจโพธิ์ศรี(คุรุราษฎร์วิชาคม)</h3>
+      <p class="text-sm text-gray-500 mt-1.5">ผู้อำนวยการ: นายอุทัย ทองลุม</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 154 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 16 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 2: โรงเรียนบ้านยางน้อย -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านยางน้อย', 'นายชนินทร จันละบุตร', '28 คน', '8 คน', 'ตำบลบึงแก อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-2" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านยางน้อย</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นายชนินทร จันละบุตร</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 27 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 8 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 3: โรงเรียนบ้านดงจงอาง -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านดงจงอาง', 'นางศุภิสรา กรแก้ว', '147 คน', '16 คน', 'ตำบลบึงแก อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-3" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านดงจงอาง</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นางศุภิสรา กรแก้ว</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 147 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 16 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 4: โรงเรียนบ้านท่าสมอโคกสมบูรณ์ -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านท่าสมอโคกสมบูรณ์', 'นายชัยสิทธ์ เสริมพงษ์', '68 คน', '7 คน', 'ตำบลม่วง อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-4" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านท่าสมอโคกสมบูรณ์</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นายชัยสิทธ์ เสริมพงษ์</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 68 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 7 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 5: โรงเรียนบ้านเหล่าใหญ่ -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านเหล่าใหญ่', 'นายอุทัย ทองลุม', '38 คน', '5 คน', 'ตำบลม่วง อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-5" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านเหล่าใหญ่</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นายอุทัย ทองลุม</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-455">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 38 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 5 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 6: โรงเรียนบ้านยางเครือ -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านยางเครือ', 'นายชานล นนทกุลพงศ์', '55 คน', '8 คน', 'ตำบลบึงแก อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-6" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านยางเครือ</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นายชานล นนทกุลพงศ์</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450"
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 55 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 8 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 7: โรงเรียนชุมชนบ้านบึงแกชัยชนะบูรพา -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนชุมชนบ้านบึงแกชัยชนะบูรพา', 'นางจินตะนา ศรีหาญ', '57 คน', '10 คน', 'ตำบลบึงแก อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-7" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-purple-100 text-purple-850 rounded">โรงเรียนชุมชนขนาดใหญ่</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg leading-tight">โรงเรียนชุมชนบ้านบึงแกชัยชนะบูรพา</h3>
+      <p class="text-sm text-gray-500 mt-1.5">ผู้อำนวยการ: นางจินตะนา ศรีหาญ</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 57 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 10 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 8: โรงเรียนบ้านเหมือดขาว -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านเหมือดขาว', 'นายชัยสิทธ์ เสริมพงษ์', '72 คน', '7 คน', 'ตำบลม่วง อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-8" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านเหมือดขาว</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นายชัยสิทธ์ เสริมพงษ์</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 72 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 7 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 9: โรงเรียนบ้านบัวขาว -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านบัวขาว', 'นางบุษกร วงศ์สุวรรณ', '44 คน', '6 คน', 'ตำบลม่วง อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-9" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านบัวขาว</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นางบุษกร วงศ์สุวรรณ</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 44 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 6 คน</span>
+      </div>
+     </a> 
+
+     <!-- School 10: โรงเรียนบ้านหนามแท่งไชยประสิทธิ์ -->
+     <a href="#school-detail" onclick="openSchoolModal('โรงเรียนบ้านหนามแท่งไชยประสิทธิ์', 'นายอุทัย ทองลุม', '19 คน', '5 คน', 'ตำบลม่วง อำเภอมหาชนะชัย จังหวัดยโสธร')" data-template-id="school-10" class="canva-card block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 border-l-4 border-purple-600 hover:border-yellow-500 hover:-translate-y-0.5 transform">
+      <div class="flex justify-between items-start mb-2">
+       <span class="text-xs font-semibold px-2 py-0.5 bg-gray-100 text-gray-600 rounded">โรงเรียนในเครือข่าย</span>
+       <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400"></i>
+      </div>
+      <h3 class="font-bold text-gray-800 text-lg">โรงเรียนบ้านหนามแท่งไชยประสิทธิ์</h3>
+      <p class="text-sm text-gray-500 mt-1">ผู้อำนวยการ: นายอุทัย ทองลุม</p>
+      <div class="flex gap-4 mt-3 text-xs text-gray-450">
+       <span class="flex items-center gap-1 text-purple-800 font-medium"><i data-lucide="users" class="w-3.5 h-3.5"></i> นร. 19 คน</span>
+       <span class="flex items-center gap-1"><i data-lucide="contact" class="w-3.5 h-3.5"></i> ครู 5 คน</span>
+      </div>
+     </a>
+    </div>
+   </section>
+
+   <!-- Activities Section -->
+   <section id="activities" class="mb-12 scroll-mt-20">
+    <div class="flex items-center gap-3 mb-6 border-b border-gray-200 pb-3">
+     <div class="p-2 bg-purple-900 text-white rounded-lg">
+      <i data-lucide="calendar" class="w-5 h-5 text-yellow-300"></i>
+     </div>
+     <h2 data-template-id="activities-heading" class="canva-text font-bold text-2xl text-purple-950">กิจกรรมและโครงการหลักของเรา</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+     <!-- Thai Preservation Activity -->
+     <a href="https://script.google.com/macros/s/AKfycbzRxdrfPPsLELeYOXtqDDl3trv3QyyL6vTUtYoArc2L3SK1dOgrSnJdS_BdH3Ij_i4PHw/exec" target="_blank" rel="noopener noreferrer" data-template-id="activity-thai" class="canva-card flex items-start gap-4 p-5 bg-purple-50/50 hover:bg-purple-100/50 rounded-xl shadow-sm hover:shadow-md transition border border-purple-100 group">
+      <div class="p-3 bg-yellow-400 text-purple-950 rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="book-marked" class="w-6 h-6"></i>
+      </div>
+      <div class="flex-grow">
+       <h3 class="font-bold text-purple-950 text-lg flex items-center gap-1.5">โครงการรักษ์ภาษาไทย <i data-lucide="external-link" class="w-4 h-4 text-purple-650"></i></h3>
+       <p class="text-sm text-purple-900/80 mt-1">กิจกรรมส่งเสริมทักษะการเขียน การอ่าน และความภาคภูมิใจในภาษาไทยระดับเครือข่าย</p>
+      </div>
+     </a> 
+
+     <!-- Sports Competition Activity -->
+     <button onclick="openActivityModal('การแข่งขันกีฬาเครือข่ายม่วงบึงแก', 'โครงการแข่งขันกีฬากรีฑานักเรียน เครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก ประจำปีการศึกษา เพื่อส่งเสริมสุขภาพพลานามัยที่สมบูรณ์แข็งแรง ฝึกทักษะการทำงานร่วมกันเป็นทีม ความสามัคคี และการมีน้ำใจนักกีฬา รู้แพ้ รู้ชนะ รู้อภัย ตลอดจนสรรหาตัวแทนนักกีฬาที่มีความสามารถโดดเด่นเข้าแข่งขันในระดับที่สูงขึ้นต่อไป')" data-template-id="activity-sports" class="canva-card text-left flex items-start gap-4 p-5 bg-yellow-50/40 hover:bg-yellow-100/50 rounded-xl shadow-sm hover:shadow-md transition border border-yellow-200 group">
+      <div class="p-3 bg-purple-900 text-yellow-300 rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="dumbbell" class="w-6 h-6"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-purple-950 text-lg flex items-center gap-1.5">การแข่งขันกีฬาเครือข่าย</h3>
+       <p class="text-sm text-purple-900/80 mt-1">มหกรรมกรีฑาและกีฬาสีร่วมเครือข่าย เพื่อสร้างเสริมสุขภาพที่ดีและสายสัมพันธ์ของนักเรียนในสังกัด</p>
+      </div>
+     </button>
+
+     <!-- Arts & Craft Activity (Integrated 2568 Link) -->
+     <button onclick="openActivityModal('งานศิลปหัตถกรรมนักเรียน เครือข่ายม่วงบึงแก', 'เวทีสำคัญที่เปิดโอกาสให้เยาวชนแสดงศักยภาพ ทักษะทางวิชาการ วิชาชีพ และศิลปะระดับเครือข่าย เพื่อคัดเลือกตัวแทนเข้าแข่งขันในระดับที่สูงขึ้นต่อไป<br><br><div class=\'bg-purple-50 p-4 rounded-xl border border-purple-100 mt-2\'><p class=\'text-xs text-purple-950 font-bold mb-2 flex items-center gap-1\'><i data-lucide=\'sparkles\' class=\'w-3.5 h-3.5 text-yellow-500\'></i> ลิงก์ระบบสารสนเทศอย่างเป็นทางการ</p><a href=\'https://esan.compet.site/387989\' target=\'_blank\' rel=\'noopener noreferrer\' class=\'inline-flex items-center gap-2 bg-purple-900 hover:bg-purple-950 text-white font-bold py-2.5 px-4 rounded-lg text-xs transition shadow-md hover:scale-105 transform\'><i data-lucide=\'external-link\' class=\'w-4 h-4 text-yellow-300\'></i> เข้าสู่เว็บไซต์ศิลปหัตถกรรม ปี 2568</a></div>')" data-template-id="activity-art" class="canva-card text-left flex items-start gap-4 p-5 bg-purple-50/50 hover:bg-purple-100/50 rounded-xl shadow-sm hover:shadow-md transition border border-purple-100 group">
+      <div class="p-3 bg-purple-200 text-purple-900 rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="palette" class="w-6 h-6"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-purple-950 text-lg flex items-center gap-1.5">ศิลปหัตถกรรมนักเรียน <span class="bg-yellow-400 text-purple-950 text-[10px] px-1.5 py-0.5 rounded font-bold">ปี 2568</span></h3>
+       <p class="text-sm text-purple-900/80 mt-1">คลังข้อมูลและเอกสารประกอบการแข่งขันทักษะวิชาการระดับโรงเรียนและเครือข่าย</p>
+      </div>
+     </button> 
+
+     <!-- Scout Activity -->
+     <button onclick="openActivityModal('เข้าค่ายลูกเสือ-เนตรนารี', 'การอยู่ค่ายพักแรมร่วมกันของกองลูกเสือเครือข่ายม่วงบึงแก เพื่อฝึกฝนความเป็นระเบียบวินัย ความสามัคคี ความกล้าหาญ และทักษะชีวิตนอกห้องเรียนร่วมกัน')" data-template-id="activity-scout" class="canva-card text-left flex items-start gap-4 p-5 bg-purple-50/30 hover:bg-purple-100/40 rounded-xl shadow-sm hover:shadow-md transition border border-purple-100 group">
+      <div class="p-3 bg-yellow-400 text-purple-950 rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="tent" class="w-6 h-6"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-purple-950 text-lg">ค่ายลูกเสือ-เนตรนารี</h3>
+       <p class="text-sm text-purple-900/80 mt-1">ภาพกิจกรรมและประกาศกำหนดการการจัดค่ายลูกเสือสามัญร่วมเครือข่ายประจำปี</p>
+      </div>
+     </button> 
+
+     <!-- Meeting Activity -->
+     <button onclick="openActivityModal('การประชุมเครือข่ายพัฒนาการศึกษา', 'การประชุมปรึกษาหารือของผู้บริหารสถานศึกษา คณะครู และบุคลากรทางการศึกษาในเครือข่ายอย่างต่อเนื่อง เพื่อวางแผนยกระดับคุณภาพและกิจกรรมการศึกษา')" data-template-id="activity-meeting" class="canva-card text-left flex items-start gap-4 p-5 bg-purple-50/30 hover:bg-purple-100/40 rounded-xl shadow-sm hover:shadow-md transition border border-purple-100 group">
+      <div class="p-3 bg-purple-950 text-yellow-300 rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-purple-950 text-lg">ประชุมคณะกรรมการเครือข่าย</h3>
+       <p class="text-sm text-purple-900/80 mt-1">วาระการประชุม รายงานการประชุม และมติการประชุมร่วมของผู้บริหารเครือข่ายฯ</p>
+      </div>
+     </button> 
+
+     <!-- Achievement Level Up -->
+     <button onclick="openActivityModal('การยกระดับผลสัมฤทธิ์ (O-NET/RT/NT)', 'แผนบูรณาการความร่วมมือเพื่อวิเคราะห์ข้อสอบและติวเข้มพัฒนาผู้เรียน เพิ่มพูนคะแนนเฉลี่ยระดับโรงเรียนสู่ระดับภูมิภาค')" data-template-id="activity-achieve" class="canva-card text-left flex items-start gap-4 p-5 bg-purple-50/30 hover:bg-purple-100/40 rounded-xl shadow-sm hover:shadow-md transition border border-purple-100 group">
+      <div class="p-3 bg-yellow-300 text-purple-950 rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="trending-up" class="w-6 h-6"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-purple-950 text-lg">ยกระดับผลสัมฤทธิ์ทางการเรียน</h3>
+       <p class="text-sm text-purple-900/80 mt-1">คลังแบบทดสอบ แผนงาน และเอกสารส่งเสริมเพื่อยกระดับผลสัมฤทธิ์ O-NET/NT</p>
+      </div>
+     </button> 
+
+     <!-- Document Command Orders -->
+     <button onclick="openActivityModal('ระบบคำสั่งเครือข่าย', 'ระบบติดตามและบันทึกเอกสารหนังสือสั่งการ คำสั่งแต่งตั้งคณะกรรมการปฏิบัติงาน และเอกสารราชการต่างๆ ที่สำคัญในการขับเคลื่อนกิจกรรมเครือข่าย')" data-template-id="activity-order" class="canva-card text-left flex items-start gap-4 p-5 bg-gray-100 hover:bg-gray-200/70 rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 group">
+      <div class="p-3 bg-purple-900 text-white rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="folder-open" class="w-6 h-6 text-yellow-300"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-gray-900 text-lg">ระบบคำสั่งและหนังสือราชการ</h3>
+       <p class="text-sm text-gray-800/80 mt-1">ดาวน์โหลดเอกสารคำสั่งแต่งตั้งคณะทำงาน คณะกรรมการคุมสอบ และประกาศอย่างเป็นทางการ</p>
+      </div>
+     </button> 
+    </div>
+   </section>
+
+   <!-- Contact Section -->
+   <section class="bg-white rounded-2xl shadow-sm border border-purple-100 p-6 md:p-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+     <div>
+      <h3 class="text-xl font-bold text-purple-950 mb-3 flex items-center gap-2">
+       <i data-lucide="mail" class="w-5 h-5 text-purple-700"></i> ติดต่อประสานงานเครือข่าย
+      </h3>
+      <p class="text-gray-550 text-sm mb-4 leading-relaxed">สำนักงานประธานเครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก (ณ โรงเรียนบ้านม่วงอาจโพธิ์ศรี(คุรุราษฎร์วิชาคม)) ยินดีต้อนรับคณะครู คณะกรรมการ และผู้ปกครองทุกท่านในการแลกเปลี่ยนข้อมูล</p>
+      
+      <div class="space-y-3 text-sm text-gray-600">
+       <div class="flex items-center gap-2.5">
+        <i data-lucide="map-pin" class="w-4.5 h-4.5 text-purple-750"></i>
+        <span>โรงเรียนบ้านม่วงอาจโพธิ์ศรี(คุรุราษฎร์วิชาคม) ต.ม่วง อ.มหาชนะชัย จ.ยโสธร 35130</span>
+       </div>
+       <div class="flex items-center gap-2.5">
+        <i data-lucide="phone" class="w-4.5 h-4.5 text-purple-750"></i>
+        <span>061-159-9554 (ในวันและเวลาราชการ)</span>
+       </div>
+       <div class="flex items-center gap-2.5">
+        <i data-lucide="globe" class="w-4.5 h-4.5 text-purple-750"></i>
+        <span>https://www.map-school.com/</span>
+       </div>
+      </div>
+     </div>
+
+     <!-- Contact Form with Purple & Yellow Design -->
+     <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+      <div>
+       <label class="block text-xs font-bold text-purple-800 uppercase mb-1">ชื่อผู้ติดต่อ / หน่วยงาน</label>
+       <input type="text" required class="w-full px-3.5 py-2 bg-purple-50/30 border border-purple-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="ระบุชื่อของท่าน">
+      </div>
+      <div>
+       <label class="block text-xs font-bold text-purple-800 uppercase mb-1">หัวข้อติดต่อ</label>
+       <input type="text" required class="w-full px-3.5 py-2 bg-purple-50/30 border border-purple-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="เรื่องที่ต้องการติดต่อประสานงาน">
+      </div>
+      <div>
+       <label class="block text-xs font-bold text-purple-800 uppercase mb-1">รายละเอียดข้อความ</label>
+       <textarea rows="3" required class="w-full px-3.5 py-2 bg-purple-50/30 border border-purple-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="พิมพ์รายละเอียดข้อความของคุณที่นี่..."></textarea>
+      </div>
+      <button type="submit" class="w-full bg-purple-900 hover:bg-purple-950 text-white font-bold py-2 px-4 rounded-lg text-sm transition shadow-sm hover:shadow flex items-center justify-center gap-2 border-b-2 border-yellow-400">
+       <i data-lucide="send" class="w-4 h-4 text-yellow-300"></i> ส่งข้อความถึงเรา
+      </button>
+      <div id="form-success-msg" class="hidden p-3 bg-purple-50 text-purple-900 border border-purple-200 rounded-lg text-xs text-center mt-2 animate-fade-in">
+       ส่งข้อความเรียบร้อยแล้ว! คณะกรรมการเครือข่ายจะตอบกลับท่านโดยเร็วที่สุด
+      </div>
+     </form>
+    </div>
+   </section>
+  </main>
+
+  <!-- Footer (Purple and Yellow Theme) -->
+  <footer data-template-id="footer-bg" class="canva-footer bg-gradient-to-r from-purple-900 via-violet-950 to-purple-950 text-white py-6 border-t-4 border-yellow-400">
+   <div class="max-w-6xl mx-auto px-4 text-center">
+    <p data-template-id="footer-text" class="canva-text text-yellow-300 font-semibold text-xs md:text-sm leading-relaxed">
+     © 2026 เครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก@ สงวนลิขสิทธิ์. พัฒนาขึ้นเพื่อการบริหารจัดการศึกษาในเครือข่าย admin : ทองพูล  บุญหล้า
+    </p>
+   </div>
+  </footer>
+
+  <!-- School Information Modal (Modern Purple Styled Modal) -->
+  <div id="school-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-purple-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+   <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-purple-100 overflow-hidden animate-fade-in">
+    <div class="p-5 bg-gradient-to-r from-purple-900 to-purple-850 text-white flex justify-between items-center border-b-2 border-yellow-400">
+     <h3 id="modal-school-title" class="font-bold text-lg text-yellow-300">โรงเรียนในสังกัด</h3>
+     <button onclick="closeSchoolModal()" class="text-white hover:text-yellow-300 focus:outline-none p-1 rounded-full hover:bg-white/10 transition">
+      <i data-lucide="x" class="w-5 h-5"></i>
+     </button>
+    </div>
+    <div class="p-6 space-y-4 text-gray-700">
+     <div class="flex items-center gap-3 border-b border-gray-100 pb-3">
+      <div class="p-2 bg-purple-100 text-purple-900 rounded-lg">
+       <i data-lucide="user" class="w-5 h-5"></i>
+      </div>
+      <div>
+       <p class="text-xs text-gray-400">ผู้อำนวยการโรงเรียน</p>
+       <p id="modal-school-director" class="font-bold text-purple-950">-</p>
+      </div>
+     </div>
+
+     <div class="grid grid-cols-2 gap-4 border-b border-gray-100 pb-3">
+      <div class="flex items-center gap-3">
+       <div class="p-2 bg-purple-100 text-purple-900 rounded-lg">
+        <i data-lucide="users" class="w-5 h-5"></i>
+       </div>
+       <div>
+        <p class="text-xs text-gray-400">จำนวนนักเรียน</p>
+        <p id="modal-school-students" class="font-bold text-purple-950">-</p>
+       </div>
+      </div>
+      <div class="flex items-center gap-3">
+       <div class="p-2 bg-yellow-100 text-yellow-850 rounded-lg">
+        <i data-lucide="contact" class="w-5 h-5"></i>
+       </div>
+       <div>
+        <p class="text-xs text-gray-400">ครูและบุคลากร</p>
+        <p id="modal-school-teachers" class="font-bold text-purple-950">-</p>
+       </div>
+      </div>
+     </div>
+
+     <div class="flex items-center gap-3 pb-3">
+      <div class="p-2 bg-gray-100 text-gray-800 rounded-lg">
+       <i data-lucide="map-pin" class="w-5 h-5"></i>
+      </div>
+      <div>
+       <p class="text-xs text-gray-400">ที่ตั้งและพิกัดโรงเรียน</p>
+       <p id="modal-school-location" class="font-bold text-gray-800">-</p>
+      </div>
+     </div>
+
+     <!-- Dynamic School Website Container -->
+     <div id="modal-school-website-container"></div>
+    </div>
+    <div class="p-4 bg-gray-50 border-t border-gray-100 flex justify-end">
+     <button onclick="closeSchoolModal()" class="px-4 py-2 bg-purple-900 hover:bg-purple-950 text-white font-bold rounded-lg text-sm transition">
+      ปิดหน้าต่าง
+     </button>
+    </div>
+   </div>
+  </div>
+
+  <!-- Activity Detail Modal (Modern Purple Styled Modal) -->
+  <div id="activity-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-purple-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+   <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-purple-100 overflow-hidden animate-fade-in">
+    <div class="p-5 bg-gradient-to-r from-purple-900 to-purple-850 text-white flex justify-between items-center border-b-2 border-yellow-400">
+     <h3 id="modal-activity-title" class="font-bold text-lg text-yellow-300">รายละเอียดกิจกรรม</h3>
+     <button onclick="closeActivityModal()" class="text-white hover:text-yellow-300 focus:outline-none p-1 rounded-full hover:bg-white/10 transition">
+      <i data-lucide="x" class="w-5 h-5"></i>
+     </button>
+    </div>
+    <div class="p-6 text-gray-700">
+     <div id="modal-activity-desc" class="leading-relaxed text-sm md:text-base">-</div>
+    </div>
+    <div class="p-4 bg-gray-50 border-t border-gray-100 flex justify-end">
+     <button onclick="closeActivityModal()" class="px-4 py-2 bg-purple-900 hover:bg-purple-950 text-white font-bold rounded-lg text-sm transition">
+      ปิดหน้าต่าง
+     </button>
+    </div>
+   </div>
+  </div>
+
+  <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Toggle logic
+      document.getElementById('mobile-toggle').addEventListener('click', () => {
+          const nav = document.getElementById('nav-links');
+          nav.classList.toggle('hidden');
+          nav.classList.toggle('flex');
+          nav.classList.toggle('flex-col');
+          nav.classList.toggle('pb-4');
+      });
+
+      // Toggle Schools Visibility Logic
+      const toggleBtn = document.getElementById('toggle-schools-btn');
+      const gridContainer = document.getElementById('schools-grid-container');
+      const toggleIcon = document.getElementById('schools-toggle-icon');
+
+      function openSchools() {
+          gridContainer.classList.remove('hidden');
+          toggleIcon.classList.add('rotate-180');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      function toggleSchools() {
+          const isHidden = gridContainer.classList.contains('hidden');
+          if (isHidden) {
+              openSchools();
+          } else {
+              gridContainer.classList.add('hidden');
+              toggleIcon.classList.remove('rotate-180');
+              toggleBtn.setAttribute('aria-expanded', 'false');
+          }
+      }
+
+      toggleBtn.addEventListener('click', toggleSchools);
+
+      // Auto-open schools when user clicks any menu link pointing to #schools
+      document.querySelectorAll('a[href="#schools"]').forEach(link => {
+          link.addEventListener('click', () => {
+              openSchools();
+          });
+      });
+
+      // School Modal Logic (Upgraded with Website Integration)
+      function openSchoolModal(title, director, students, teachers, location, website = '') {
+          document.getElementById('modal-school-title').innerText = title;
+          document.getElementById('modal-school-director').innerText = director;
+          document.getElementById('modal-school-students').innerText = students;
+          document.getElementById('modal-school-teachers').innerText = teachers;
+          document.getElementById('modal-school-location').innerText = location || "ตำบลบึงแก อำเภอมหาชนะชัย";
+          
+          const websiteContainer = document.getElementById('modal-school-website-container');
+          if (website) {
+              websiteContainer.innerHTML = `
+                  <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                   <div class="p-2 bg-yellow-100 text-purple-950 rounded-lg">
+                    <i data-lucide="globe" class="w-5 h-5"></i>
+                   </div>
+                   <div class="flex-grow">
+                    <p class="text-xs text-gray-400 font-medium">ช่องทางการติดต่อออนไลน์</p>
+                    <a href="${website}" target="_blank" rel="noopener noreferrer" class="font-bold text-purple-900 hover:text-purple-950 hover:underline flex items-center gap-1.5 text-sm">
+                     <span>เยี่ยมชมเว็บไซต์โรงเรียน</span>
+                     <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                   </div>
+                  </div>
+              `;
+          } else {
+              websiteContainer.innerHTML = '';
+          }
+          
+          // Re-render icons for newly injected HTML
+          lucide.createIcons();
+          
+          const modal = document.getElementById('school-modal');
+          modal.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+      }
+
+      function closeSchoolModal() {
+          const modal = document.getElementById('school-modal');
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+      }
+
+      // Activity Modal Logic (Upgraded to allow safe HTML rendering)
+      function openActivityModal(title, description) {
+          document.getElementById('modal-activity-title').innerText = title;
+          document.getElementById('modal-activity-desc').innerHTML = description;
+          
+          // Re-render icons in case description contains dynamic lucide icons
+          lucide.createIcons();
+          
+          const modal = document.getElementById('activity-modal');
+          modal.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+      }
+
+      function closeActivityModal() {
+          const modal = document.getElementById('activity-modal');
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+      }
+
+      // Form Submit handler
+      function handleContactSubmit(event) {
+          event.preventDefault();
+          const form = event.target;
+          
+          // Show simulated success message
+          const successMsg = document.getElementById('form-success-msg');
+          successMsg.classList.remove('hidden');
+          
+          // Clear form fields
+          form.reset();
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+              successMsg.classList.add('hidden');
+          }, 5000);
+      }
+  </script>
+ </body>
+</html>
