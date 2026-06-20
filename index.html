@@ -73,6 +73,8 @@
     <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium text-orange-300 hover:text-white"><i data-lucide="dumbbell" class="w-4 h-4"></i> แข่งขันกีฬา</a> 
     <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="file-text" class="w-4 h-4 text-purple-300"></i> ระบบคำสั่ง</a> 
     <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="compass" class="w-4 h-4 text-purple-300"></i> ค่ายลูกเสือ</a> 
+    <!-- Added: ศึกษาดูงาน menu -->
+    <a href="#study-visit" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium text-emerald-300 hover:text-white"><i data-lucide="map" class="w-4 h-4"></i> ศึกษาดูงาน</a> 
     <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="users" class="w-4 h-4 text-purple-300"></i> ประชุมเครือข่าย</a> 
     <a href="#activities" class="px-3.5 py-2 rounded-md hover:bg-purple-800 transition flex items-center gap-1.5 font-medium"><i data-lucide="trending-up" class="w-4 h-4 text-purple-300"></i> ยกระดับผลสัมฤทธิ์</a>
    </div>
@@ -105,14 +107,14 @@
       <div class="p-3 bg-yellow-100 text-yellow-850 rounded-full mb-2">
         <i data-lucide="users" class="w-6 h-6"></i>
       </div>
-      <span class="text-2xl font-extrabold text-purple-950">900+</span>
+      <span class="text-2xl font-extrabold text-purple-950">500+</span>
       <span class="text-xs text-gray-500 mt-1">จำนวนนักเรียนทั้งหมด</span>
     </div>
     <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-50 text-center flex flex-col justify-center items-center">
       <div class="p-3 bg-purple-100 text-purple-800 rounded-full mb-2">
         <i data-lucide="award" class="w-6 h-6"></i>
       </div>
-      <span class="text-2xl font-extrabold text-purple-900">88%</span>
+      <span class="text-2xl font-extrabold text-purple-900">95%</span>
       <span class="text-xs text-gray-500 mt-1">ผลประเมินคุณภาพดีเยี่ยม</span>
     </div>
     <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-50 text-center flex flex-col justify-center items-center">
@@ -296,7 +298,7 @@
     </div>
    </section>
 
-   <!-- Activities Section -->
+   <!-- Activities Section (รวมโครงการศึกษาดูงานไว้ที่ส่วนนี้แล้ว) -->
    <section id="activities" class="mb-12 scroll-mt-20">
     <div class="flex items-center gap-3 mb-6 border-b border-gray-200 pb-3">
      <div class="p-2 bg-purple-900 text-white rounded-lg">
@@ -382,6 +384,17 @@
        <p class="text-sm text-gray-800/80 mt-1">ดาวน์โหลดเอกสารคำสั่งแต่งตั้งคณะทำงาน คณะกรรมการคุมสอบ และประกาศอย่างเป็นทางการ</p>
       </div>
      </button> 
+
+     <!-- Integrated: ศึกษาดูงาน (ปรับสไตล์ให้อยู่ในกลุ่มกิจกรรมหลักแล้ว) -->
+     <button id="study-visit" onclick="openActivityModal('โครงการศึกษาดูงานและแลกเปลี่ยนเรียนรู้ ประจำปี 2568', 'เครือข่ายฯ มีแผนดำเนินการศึกษาดูงานในสถานศึกษาต้นแบบ เพื่อแลกเปลี่ยนเรียนรู้แนวปฏิบัติที่ดี (Best Practice) ของสถานศึกษาในเครือข่าย ทั้งภายในและภายนอกเขตพื้นที่การศึกษา เพื่อนำความรู้มาปรับใช้ในการพัฒนาคุณภาพผู้เรียนและระบบบริหารจัดการ โดยจะประกาศรายละเอียดกำหนดการให้ทราบอีกครั้ง')" class="canva-card text-left flex items-start gap-4 p-5 bg-emerald-50/50 hover:bg-emerald-100/50 rounded-xl shadow-sm hover:shadow-md transition border border-emerald-200 group scroll-mt-20">
+      <div class="p-3 bg-emerald-700 text-white rounded-lg group-hover:scale-110 transition duration-300">
+       <i data-lucide="map" class="w-6 h-6 text-emerald-200"></i>
+      </div>
+      <div>
+       <h3 class="font-bold text-purple-950 text-lg">โครงการศึกษาดูงานและแลกเปลี่ยนเรียนรู้</h3>
+       <p class="text-sm text-purple-900/80 mt-1">แผนการศึกษาดูงานเพื่อแลกเปลี่ยนเรียนรู้แนวปฏิบัติที่ดี (Best Practice) ทั้งภายในและภายนอกเขตพื้นที่ฯ</p>
+      </div>
+     </button> 
     </div>
    </section>
 
@@ -436,7 +449,7 @@
   </main>
 
   <!-- Footer (Purple and Yellow Theme) -->
-  <footer data-template-id="footer-bg" class="canva-footer bg-gradient-to-r from-purple-900 via-violet-950 to-purple-950 text-white py-6 border-t-4 border-yellow-400">
+  <footer data-template-id="footer-bg" class="canva-footer bg-gradient-to-r from-purple-900 via-violet-955 to-purple-950 text-white py-6 border-t-4 border-yellow-400">
    <div class="max-w-6xl mx-auto px-4 text-center">
     <p data-template-id="footer-text" class="canva-text text-yellow-300 font-semibold text-xs md:text-sm leading-relaxed">
      © 2026 เครือข่ายพัฒนาคุณภาพการศึกษาม่วงบึงแก@ สงวนลิขสิทธิ์. พัฒนาขึ้นเพื่อการบริหารจัดการศึกษาในเครือข่าย admin : ทองพูล  บุญหล้า
